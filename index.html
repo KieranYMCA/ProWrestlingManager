@@ -1,14 +1,22 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TEW 9 Clone</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEW 9 Clone - Minimal</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app"></div>
+  <div id="home" class="screen visible">
+    <h1>TEW 9 Clone</h1>
+    <button onclick="startGame()">Start Game</button>
+  </div>
+
+  <div id="game" class="screen">
+    <h2>Roster</h2>
+    <div class="roster" id="roster"></div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

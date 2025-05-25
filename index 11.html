@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEW 9 Clone - Minimal</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f0f0; padding: 20px; }
+    .screen { display: none; }
+    .visible { display: block; }
+    .roster img { width: 100px; height: 100px; border-radius: 50%; margin: 10px; }
+    .wrestler { text-align: center; display: inline-block; margin: 10px; }
+  </style>
+</head>
+<body>
+  <div id="home" class="screen visible">
+    <h1>TEW 9 Clone</h1>
+    <button onclick="startGame()">Start Game</button>
+  </div>
+
+  <div id="game" class="screen">
+    <h2>Roster</h2>
+    <div class="roster" id="roster"></div>
+  </div>
+
+  <script>
+    const wrestlers = [
+      { name: "Jack Havoc", style: "Brawler", pop: 65, image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Portrait_Placeholder.png/100px-Portrait_Placeholder.png" },
+      { name: "El Fantasma", style: "Luchador", pop: 72, image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Portrait_Placeholder.png/100px-Portrait_Placeholder.png" },
+      { name: "Bruiser Betty", style: "Brawler", pop: 60, image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Portrait_Placeholder.png/100px-Portrait_Placeholder.png" },
+    ];
+
+    function startGame() {
+      document.getElementById('home').classList.remove('visible');
+      document.getElementById('game').classList.add('visible');
+      renderRoster();
+    }
+
+    function renderRoster() {
+      const container = document.getElementById('roster');
+      container.innerHTML = '';
+      wrestlers.forEach(w => {
+        container.innerHTML += `
+          <div class="wrestler">
+            <img src="${w.image}" alt="${w.name}" />
+            <div><strong>${w.name}</strong></div>
+            <div>${w.style}</div>
+            <div>Popularity: ${w.pop}</div>
+          </div>
+        `;
+      });
+    }
+  </script>
+</body>
+</html>

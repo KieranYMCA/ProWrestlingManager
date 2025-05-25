@@ -1,0 +1,19 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  margin: 0;
+  padding: 20px;
+}
+h1, h2 {
+  text-align: center;
+}
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+.roster img {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+}
